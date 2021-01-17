@@ -45,6 +45,14 @@ class ResourcesController extends Controller
         ];
     }
 
+    public function fetchResourcesSound($id) {
+        $resources = DB::table('resources')->where('index_id', $id)->get();
+        return [
+            'code' => 200,
+            'data' => $resources
+        ];
+    }
+
     public function createResources(Request $request) {
         $name = $request->name;
         $desc = $request->desc;

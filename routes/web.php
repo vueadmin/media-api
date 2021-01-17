@@ -23,6 +23,7 @@ $router->post('/api/admin/login/sso/user/jwttoken', 'LoginController@jwttoken');
 // $router->get('/api/admin/login/sso/user/jwttoken', 'LoginController@jwttoken');
 
 $router->get('/resources/index', 'ResourcesController@fetchResources');
+$router->get('/resources/sound/{id}', 'ResourcesController@fetchResourcesSound');
 $router->post('/resources/add', 'ResourcesController@createResources');
 $router->post('/resources/qrcode', 'ResourcesController@createResourcesQrcode');
 
