@@ -20,7 +20,7 @@ class ResourcesController extends Controller
 
     public function createResourcesQrcode(Request $request) {
         $filename = $request->name . '.svg';
-        $fileurl = $request->url;
+        $fileurl = 'http://m.zhangguoheng.cn/' . $request->name;
         $file = './' . $filename;
         if (file_exists($file)) {
             return [
