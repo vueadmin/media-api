@@ -105,6 +105,23 @@ class ResourcesController extends Controller
 
     }
 
+    public function deleteResources(Request $request) {
+        $res = DB::table('resources')->where('id', $request->id)->delete();
+        if ($res) {
+            return [
+                'code' => 200,
+                'data' => '删除成功',
+                'message' => $res
+            ];
+        }   else {
+            return [
+                'code' => 304,
+                'data' => '删除失败',
+                'message' => $res
+            ];
+        }
+    }
+
     public function jwttoken(Request $request) {
         return [
             'code' => 200,

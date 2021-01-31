@@ -26,6 +26,7 @@ $router->get('/resources/index', 'ResourcesController@fetchResources');
 $router->get('/resources/sound/{id}', 'ResourcesController@fetchResourcesSound');
 $router->post('/resources/add', 'ResourcesController@createResources');
 $router->post('/resources/edit', 'ResourcesController@updateResources');
+$router->post('/resources/del', 'ResourcesController@deleteResources');
 
 $router->post('/resources/qrcode', 'ResourcesController@createResourcesQrcode');
 
