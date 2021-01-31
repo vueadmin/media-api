@@ -79,6 +79,18 @@ class ResourcesController extends Controller
         }
     }
 
+    public function updateResources(Request $request) {
+        $affected = DB::table('resources')
+              ->where('id', $request->id)
+              ->update([
+                    'name' => $request->name,
+                    'desc' => $request->desc,
+                    'type' => $request->type,
+                    'author' => $request->author,
+                    'singer' => $request->singer
+                ]);
+    }
+
     public function jwttoken(Request $request) {
         return [
             'code' => 200,
