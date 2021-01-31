@@ -89,11 +89,20 @@ class ResourcesController extends Controller
                     'author' => $request->author,
                     'singer' => $request->singer
                 ]);
-        return [
-            'code' => 200,
-            'data' => '添加成功',
-            'message' => $affected
-        ];
+        if ($affected) {
+            return [
+                'code' => 200,
+                'data' => '编辑成功',
+                'message' => $affected
+            ];
+        }   else {
+            return [
+                'code' => 304,
+                'data' => '编辑失败',
+                'message' => $affected
+            ];
+        }
+
     }
 
     public function jwttoken(Request $request) {
